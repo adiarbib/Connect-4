@@ -2,7 +2,7 @@
 var EMPTY = 0, PLAYER1 = 1, PLAYER2 = 2;
 var SIZE = 6;
 var WIN_LENGTH = 4;
-var PLAYER_HTML = ["", "<i class=\"material-icons\">android</i>", "<i class=\"material-icons\">grade</i>"] // The content of the table for each player
+var PLAYER_HTML = ["", "<i class=\"fa fa-android\"></i>", "<i class=\"fa fa-apple\"></i>"] // The content of the table for each player
 var board; // This will hold a two dimensional array that will represent the board
 var currentPlayer; // This will hold the index of the current player (PLAYER1/PLAYER2/EMPTY)
 
@@ -42,25 +42,32 @@ function init_board(height, width) {
 
 
 // Handles the on_click event on a cell
-function handle_click(j) {
+function handle_click(row, col) {
     if (currentPlayer == EMPTY) {
         return; // Game over
     }
-    for(var i=0;i<height;i++)
-    {
-        if(i==height-1 && board[i][j]!= EMPTY)
-        {
-            return;
-        }
-        if(board[i][j] == EMPTY)
-        {
-            board[i][j] = currentPlayer;
-            $("#cell_row_col".replace("row", i).replace("col", j)).html(PLAYER_HTML[currentPlayer]); 
-            test_victory(currentPlayer, i, j);
-            currentPlayer = PLAYER1 + PLAYER2 - currentPlayer; // Switch current player
-            break;
-        }
+
+    var lowestRow = findLowestEmptyCell(col);
+
+    if(lowestRow == -1) {
+        return; // Column is full
     }
+    
+    board[lowestRow][col] = currentPlayer;
+    $("#cell_row_col".replace("row", lowestRow).replace("col", col)).html(PLAYER_HTML[currentPlayer]); 
+    test_victory(currentPlayer, lowestRow, col);
+    currentPlayer = PLAYER1 + PLAYER2 - currentPlayer; // Switch current player
+}
+
+function findLowestEmptyCell(col)
+{
+    for (var row = SIZE - 1; row >= 0; row--)
+    {
+        if (board[row][col] == EMPTY)
+            return row;
+    }
+
+    return -1;
 }
 
 // Tries to find WIN_LENGTH consecutive cells of a given players from a given point (i,j) in a given direction (di,dj)
@@ -121,5 +128,3 @@ $(document).ready(function () {
     $("#gameTable").html(tableContents); // Set the html of the object whose id is gameTable to variable tableContents
 
 });
-
-

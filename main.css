@@ -12,7 +12,6 @@ td {
     text-align: center;
 }
 
-/* Cool purple cursor effect */
 td:hover {
     background-color: deepskyblue;
     color: whitesmoke;
