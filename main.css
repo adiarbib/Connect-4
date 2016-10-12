@@ -1,0 +1,25 @@
+table {
+    margin-left:auto; 
+    margin-right:auto;
+    border-collapse: separate;
+}
+
+td {
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+    border: solid 2px;
+    text-align: center;
+}
+
+/* Cool purple cursor effect */
+td:hover {
+    background-color: deepskyblue;
+    color: whitesmoke;
+}
+
+/* Will mark winning sequence with green */
+.wincell {
+    border: solid 2px;
+    background-color: green;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <title>Connect4</title>
+    <!-- My css -->
+    <link rel="stylesheet" href="main.css">
+    <!-- My js -->
+    <script src="main.js"></script>
+    <!-- Bootstrap and Font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- Bootstrap and jQuery - Scripts can also be a loaded at the end of the body tag for efficiency -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <h1>Connect 4 game</h1>
+    <p>
+        <table id="gameTable">
+            <!-- Table content will be genenrated by js function generate_table_html -->
+        </table>
+    </p>
+    <h2>instructions:</h2>
+    <p>Before starting, players decide randomly which of them will be the beginner; moves are made alternatively, one by turn.</br>
+
+        Moves entails in placing new pieces on the board; pieces slide downwards from upper holes, falling down to the last row or piling up on the last piece introduced in the same column.</br>
+        So, in every turn the introduced piece may be placed at most on seven different squares.</br>
+
+        The winner is the first player who gets a straight line made with four own pieces and no gaps between them.</br>
+    </p>
+
+
+</body>
+
+</html>
