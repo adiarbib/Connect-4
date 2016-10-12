@@ -19,6 +19,17 @@ td:hover {
 
 /* Will mark winning sequence with green */
 .wincell {
-    border: solid 2px;
-    background-color: green;
+    background-color: deepskyblue;
+    color: whitesmoke;
+}
+
+button{
+    background-color:hotpink;
+    border: none;
+    color: whitesmoke;
+    font-size: 25px;
+}
+button:hover{
+    background-color: deeppink;
+    
 }
